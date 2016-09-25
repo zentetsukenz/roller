@@ -1,5 +1,7 @@
 # Roller
 
+[![Build Status](https://travis-ci.org/zentetsukenz/roller.svg?branch=master)](https://travis-ci.org/zentetsukenz/roller)
+
 To start your Phoenix app:
 
   * Install dependencies with `mix deps.get`
