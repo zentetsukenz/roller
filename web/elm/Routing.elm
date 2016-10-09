@@ -14,10 +14,7 @@ type Route
 matchers : Parser (Route -> a) a
 matchers =
     oneOf
-        [ format MainRoute (s "")
-        , format PlayerRoute (s "players" </> int)
-        , format PlayersRoute (s "players")
-        ]
+        [ format MainRoute (s "") ]
 
 
 hashParser : Navigation.Location -> Result String Route
