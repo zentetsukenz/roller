@@ -1,20 +1,32 @@
 module Routing exposing (..)
 
-import String
 import Navigation
+import String
 import UrlParser exposing (..)
-import Main
 
 
 type Route
-    = MainRoute
+    = DashboardRoute
+    | AboutRoute
     | NotFoundRoute
+
+
+routeFromResult : Result String Route -> Route
+routeFromResult routeResult =
+    case routeResult of
+        Ok route ->
+            route
+
+        Err reason ->
+            NotFoundRoute
 
 
 matchers : Parser (Route -> a) a
 matchers =
     oneOf
-        [ format MainRoute (s "") ]
+        [ format DashboardRoute (s "")
+        , format AboutRoute (s "about")
+        ]
 
 
 hashParser : Navigation.Location -> Result String Route
@@ -27,13 +39,3 @@ hashParser location =
 parser : Navigation.Parser (Result String Route)
 parser =
     Navigation.makeParser hashParser
-
-
-routeFromResult : Result String Route -> Route
-routeFromResult result =
-    case result of
-        Ok route ->
-            route
-
-        Err string ->
-            NotFoundRoute
