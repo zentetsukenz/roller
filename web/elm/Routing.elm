@@ -26,6 +26,7 @@ matchers =
     oneOf
         [ format DashboardRoute (s "")
         , format AboutRoute (s "about")
+        , format DashboardRoute (s "dashboard")
         ]
 
 

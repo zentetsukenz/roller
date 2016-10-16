@@ -1,6 +1,7 @@
 module View exposing (..)
 
 import Html exposing (Html, div, text, li, ul)
+import Html.Events exposing (..)
 import Models exposing (..)
 import Routing exposing (..)
 import Messages exposing (Msg(..))
@@ -33,17 +34,17 @@ navBar model =
         DashboardRoute ->
             ul []
                 [ li [] [ text "At Dashboard" ]
-                , li [] [ text "About" ]
+                , li [ onClick ShowAbout ] [ text "About" ]
                 ]
 
         AboutRoute ->
             ul []
-                [ li [] [ text "Dashboard" ]
+                [ li [ onClick ShowDashboard ] [ text "Dashboard" ]
                 , li [] [ text "At About" ]
                 ]
 
         NotFoundRoute ->
             ul []
-                [ li [] [ text "Dashboard" ]
-                , li [] [ text "About" ]
+                [ li [ onClick ShowDashboard ] [ text "Dashboard" ]
+                , li [ onClick ShowAbout ] [ text "About" ]
                 ]
