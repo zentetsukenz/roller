@@ -5,13 +5,14 @@ import Html.Events exposing (..)
 import Models exposing (..)
 import Routing exposing (..)
 import Messages exposing (Msg(..))
+import Bootstrap.Html exposing (..)
 
 
 view : Model -> Html Msg
 view model =
     div []
         [ div [] [ navBar model ]
-        , div [] [ page model ]
+        , container_ [ page model ]
         ]
 
 
