@@ -6,12 +6,13 @@ import Models exposing (..)
 import Routing exposing (..)
 import Messages exposing (Msg(..))
 import Bootstrap.Html exposing (..)
+import NavBar
 
 
 view : Model -> Html Msg
 view model =
     div []
-        [ div [] [ navBar model ]
+        [ NavBar.view model
         , container_ [ page model ]
         ]
 
@@ -27,25 +28,3 @@ page model =
 
         NotFoundRoute ->
             div [] [ text "Not Found!!" ]
-
-
-navBar : Model -> Html Msg
-navBar model =
-    case model.route of
-        DashboardRoute ->
-            ul []
-                [ li [] [ text "At Dashboard" ]
-                , li [ onClick ShowAbout ] [ text "About" ]
-                ]
-
-        AboutRoute ->
-            ul []
-                [ li [ onClick ShowDashboard ] [ text "Dashboard" ]
-                , li [] [ text "At About" ]
-                ]
-
-        NotFoundRoute ->
-            ul []
-                [ li [ onClick ShowDashboard ] [ text "Dashboard" ]
-                , li [ onClick ShowAbout ] [ text "About" ]
-                ]
