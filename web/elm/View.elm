@@ -1,6 +1,6 @@
 module View exposing (..)
 
-import Html exposing (Html, div, text, li, ul)
+import Html exposing (Html, div, text, li, ul, h1)
 import Html.Events exposing (..)
 import Models exposing (..)
 import Routing exposing (..)
@@ -21,10 +21,10 @@ page : Model -> Html Msg
 page model =
     case model.route of
         DashboardRoute ->
-            div [] [ text "Dashboard!!" ]
+            h1 [] [ text "Dashboard!!" ]
 
         AboutRoute ->
-            div [] [ text "About!!" ]
+            h1 [] [ text "About!!" ]
 
         NotFoundRoute ->
-            div [] [ text "Not Found!!" ]
+            h1 [] [ text "Not Found!!" ]
