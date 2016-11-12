@@ -19,6 +19,6 @@ initModel route =
 buildNavBar : NavBar.Model
 buildNavBar =
     NavBar.init
-        [ ( "dashboard", Nav.init "Dashboard" "/dashboard" )
-        , ( "about", Nav.init "About" "/about" )
+        [ ( "dashboard", Nav.init "Dashboard" "#dashboard" )
+        , ( "about", Nav.init "About" "#about" )
         ]

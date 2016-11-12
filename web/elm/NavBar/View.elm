@@ -4,7 +4,7 @@ import NavBar.Models as NavBar exposing (..)
 import NavBar.Nav.Models as Nav exposing (..)
 import NavBar.Nav.View as NavView exposing (..)
 import NavBar.Messages exposing (..)
-import Html exposing (Html, ul, div, text, a)
+import Html exposing (Html, ul, div, text, span)
 import Html.Attributes exposing (class, href)
 import Html.App exposing (..)
 import Bootstrap.Html exposing (..)
@@ -27,7 +27,7 @@ container model =
 navbarHeader : Html Msg
 navbarHeader =
     navbarHeader_
-        [ a [ class "navbar-brand", href "#" ] [ text "Roller" ] ]
+        [ span [ class "navbar-brand" ] [ text "Roller" ] ]
 
 
 navBar : NavBar.Model -> Html Msg
