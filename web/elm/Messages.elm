@@ -1,6 +1,7 @@
-module Messages exposing (..)
+module Messages exposing (Msg(..))
+
+import NavBar.Messages as NavBarMessages exposing (..)
 
 
 type Msg
-    = ShowDashboard
-    | ShowAbout
+    = NavBarMsg NavBarMessages.Msg

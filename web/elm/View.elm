@@ -2,19 +2,25 @@ module View exposing (..)
 
 import Html exposing (Html, div, text, li, ul, h1)
 import Html.Events exposing (..)
+import Html.App exposing (..)
 import Models exposing (..)
 import Routing exposing (..)
-import Messages exposing (Msg(..))
+import Messages exposing (..)
 import Bootstrap.Html exposing (..)
-import NavBar
+import NavBar.View exposing (..)
 
 
 view : Model -> Html Msg
 view model =
     div []
-        [ NavBar.view model
+        [ navBar model
         , container_ [ page model ]
         ]
+
+
+navBar : Model -> Html Msg
+navBar model =
+    Html.App.map NavBarMsg (NavBar.View.view model.navBar)
 
 
 page : Model -> Html Msg
